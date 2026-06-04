@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTag from '../components/SectionTag';
-import EagleLogo from '../components/EagleLogo';
+
 
 const AboutSection: React.FC = () => {
   return (
@@ -9,13 +9,6 @@ const AboutSection: React.FC = () => {
       id="sobre"
       className="relative bg-crk-surface-1 py-[120px] overflow-hidden"
     >
-      {/* Watermark */}
-      <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 z-0 pointer-events-none select-none">
-        <EagleLogo
-          size={600}
-          className="text-crk-accent opacity-[0.03]"
-        />
-      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-[760px] mx-auto px-6 text-center">

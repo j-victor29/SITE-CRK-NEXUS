@@ -11,10 +11,10 @@ const navLinks = [
 ];
 
 const serviceLinks = [
-  'Estrategia',
-  'Social Media',
-  'Automacao IA',
-  'Dev de Sistemas',
+  'Estratégia',
+  'Social Mídia',
+  'Automação com IA',
+  'Dev. de Sistemas',
 ];
 
 const Footer: React.FC = () => {

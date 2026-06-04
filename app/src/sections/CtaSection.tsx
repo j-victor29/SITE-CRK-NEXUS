@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTag from '../components/SectionTag';
-import EagleLogo from '../components/EagleLogo';
+
 
 const CtaSection: React.FC = () => {
   return (
@@ -14,9 +14,10 @@ const CtaSection: React.FC = () => {
     >
       {/* Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
-        <EagleLogo
-          size={400}
-          className="text-crk-accent opacity-[0.04] scale-[2.5]"
+        <img
+          src="/logo-crk.png"
+          alt=""
+          className="w-[450px] h-auto object-contain opacity-[0.07] scale-[2.5]"
         />
       </div>
 
