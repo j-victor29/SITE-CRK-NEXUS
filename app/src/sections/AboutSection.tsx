@@ -28,9 +28,9 @@ const AboutSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="font-display font-bold text-[32px] sm:text-[40px] lg:text-[48px] leading-[1.15] tracking-[-0.02em] text-crk-text-primary mt-5"
         >
-          Nao somos uma agencia comum.
+          Não somos uma agência comum.
           <br />
-          Somos o parceiro estrategico que sua empresa precisava.
+          Somos o parceiro estratégico que sua empresa precisava.
         </motion.h2>
 
         <motion.p
@@ -40,10 +40,10 @@ const AboutSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="font-display text-base lg:text-lg leading-[1.8] text-[#888888] max-w-[640px] mx-auto mt-7"
         >
-          Em um mercado saturado de promessas, a crknexus entrega clareza.
-          Unimos visao de negocio, tecnologia de ponta e execucao precisa
-          para transformar empresas em lideres de mercado. Nossa inteligencia
-          nao e artificial — e estrategica.
+          Em um mercado saturado de promessas, a CRK Nexus entrega clareza.
+          Unimos visão de negócio, tecnologia de ponta e execução precisa
+          para transformar empresas em líderes de mercado. Nossa inteligência
+          não é artificial, é estratégica.
         </motion.p>
       </div>
     </section>

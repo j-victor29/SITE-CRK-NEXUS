@@ -11,28 +11,28 @@ interface ProcessStepData {
 const steps: ProcessStepData[] = [
   {
     number: '1',
-    title: 'Diagnostico',
-    description: 'Mapeamento completo do cenario atual, dores e oportunidades.',
+    title: 'Diagnóstico',
+    description: 'Mapeamento completo do cenário atual, dores e oportunidades.',
   },
   {
     number: '2',
-    title: 'Estrategia',
-    description: 'Definicao de objetivos, KPIs e plano de acao personalizado.',
+    title: 'Estratégia',
+    description: 'Definição de objetivos, KPIs e plano de ação personalizado.',
   },
   {
     number: '3',
-    title: 'Execucao',
-    description: 'Implementacao agil com foco em resultados de curto prazo.',
+    title: 'Execução',
+    description: 'Implementação ágil com foco em resultados de curto prazo.',
   },
   {
     number: '4',
-    title: 'Otimizacao',
-    description: 'Analise continua de dados e ajustes para maximizar performance.',
+    title: 'Otimização',
+    description: 'Análise contínua de dados e ajustes para maximizar performance.',
   },
   {
     number: '5',
     title: 'Escala',
-    description: 'Amplificacao do que funciona para crescimento sustentavel.',
+    description: 'Amplificação do que funciona para crescimento sustentável.',
   },
 ];
 
@@ -103,7 +103,7 @@ const ProcessSection: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="font-display font-bold text-[28px] sm:text-[32px] lg:text-4xl text-crk-text-primary mt-4"
           >
-            Do diagnostico a performance.
+            Do diagnóstico à performance.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ const ProcessSection: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="font-display text-base text-[#888888] mt-3"
           >
-            Cada etapa e intencional. Nenhum recurso e desperdicado.
+            Cada etapa é intencional. Nenhum recurso é desperdiçado.
           </motion.p>
         </div>
 

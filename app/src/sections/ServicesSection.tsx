@@ -50,33 +50,33 @@ const DevIcon = () => (
 const services = [
   {
     number: '01',
-    title: 'Estrategia de Crescimento',
-    description: 'Diagnostico completo do seu negocio, posicionamento de mercado e planejamento estrategico para escalar com inteligencia.',
+    title: 'Estratégia de Crescimento',
+    description: 'Diagnóstico completo do seu negócio, posicionamento de mercado e planejamento estratégico para escalar com inteligência.',
     icon: <StrategyIcon />,
   },
   {
     number: '02',
     title: 'Social Media & Performance',
-    description: 'Gestao de conteudo, campanhas paid e otimizacao de performance para construir autoridade e gerar resultados mensuraveis.',
+    description: 'Gestão de conteúdo, campanhas pagas e otimização de performance para construir autoridade e gerar resultados mensuráveis.',
     icon: <SocialMediaIcon />,
   },
   {
     number: '03',
-    title: 'Automacao com IA',
-    description: 'Implementacao de agentes de IA, chatbots inteligentes e automacao de processos para reduzir custos e aumentar produtividade.',
+    title: 'Automação com IA',
+    description: 'Implementação de agentes de IA, chatbots inteligentes e automação de processos para reduzir custos e aumentar produtividade.',
     icon: <AutomationIcon />,
   },
   {
     number: '04',
     title: 'Desenvolvimento de Sistemas',
-    description: 'Criacao de plataformas digitais, integracoes e solucoes tecnologicas sob medida para o seu modelo de negocio.',
+    description: 'Criação de plataformas digitais, integrações e soluções tecnológicas sob medida para o seu modelo de negócio.',
     icon: <DevIcon />,
   },
 ];
 
 const ServicesSection: React.FC = () => {
   return (
-    <section id="servicos" className="bg-crk-bg py-[120px]">
+    <section id="serviços" className="bg-crk-bg py-[120px]">
       <div className="max-w-[1100px] mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -95,7 +95,7 @@ const ServicesSection: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="font-display font-bold text-[28px] sm:text-[32px] lg:text-4xl leading-[1.2] tracking-[-0.02em] text-crk-text-primary mt-4"
           >
-            Quatro frentes. Um unico objetivo: resultado.
+            Quatro frentes. Um único objetivo: resultado.
           </motion.h2>
         </div>
 

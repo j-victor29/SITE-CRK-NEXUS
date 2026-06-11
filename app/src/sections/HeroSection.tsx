@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="font-mono text-[11px] font-medium tracking-[0.15em] uppercase text-crk-accent mb-6"
           >
-            ESTRATEGIA · IA · TECNOLOGIA
+            ESTRATÉGIA · IA · TECNOLOGIA
           </motion.span>
 
           {/* Headline */}
@@ -49,7 +49,7 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Estrategia que escala.
+              Estratégia que escala.
             </motion.span>
             <motion.span
               className="block"
@@ -57,7 +57,7 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Tecnologia que executa.
+              Tecnologia que multiplica resultados.
             </motion.span>
           </h1>
 
@@ -68,8 +68,8 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="font-display text-base lg:text-lg leading-[1.7] text-[#888888] max-w-[480px] mt-7 mb-11"
           >
-            A crknexus une inteligencia estrategica, automacao com IA e desenvolvimento
-            de sistemas para empresas que nao querem apenas crescer — querem dominar.
+            A CRK Nexus conecta estratégia, inteligência artificial e desenvolvimento de software para criar
+            operações mais eficientes, automatizadas e preparadas para crescer sem limites.
           </motion.p>
 
           {/* CTAs */}
@@ -84,7 +84,7 @@ const HeroSection: React.FC = () => {
               href="#contato"
               className="inline-flex items-center py-4 px-8 bg-white text-black rounded-btn font-display font-semibold text-[15px] hover:scale-[1.03] hover:shadow-cta-hover transition-all duration-250"
             >
-              Quero crescer com estrategia
+              Quero escalar meu negócio
             </a>
 
             {/* Secondary CTA */}
@@ -93,7 +93,7 @@ const HeroSection: React.FC = () => {
               className="inline-flex items-center font-display font-medium text-[15px] text-[#888888] hover:text-crk-accent transition-colors duration-200 group"
             >
               <span className="relative">
-                Conheca nossos servicos
+                Conheça nossos serviços
                 <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-crk-accent group-hover:w-full transition-all duration-300" />
               </span>
               <span className="ml-1 group-hover:translate-y-0.5 transition-transform duration-200">↓</span>

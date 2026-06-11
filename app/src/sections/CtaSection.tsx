@@ -39,7 +39,7 @@ const CtaSection: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="font-display font-extrabold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1.1] tracking-[-0.03em] text-crk-text-primary mt-5"
         >
-          Pronto para deixar de competir e comecar a liderar?
+          Pronto para deixar de competir e começar a liderar?
         </motion.h2>
 
         <motion.p
@@ -49,7 +49,7 @@ const CtaSection: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="font-display text-base lg:text-lg text-[#888888] mt-5"
         >
-          Fale com a crknexus e descubra o que estrategia real pode fazer pelo seu negocio.
+          Fale com a CRK Nexus e descubra o que estrategia real pode fazer pelo seu negocio.
         </motion.p>
 
         <motion.div
@@ -63,7 +63,7 @@ const CtaSection: React.FC = () => {
             href="mailto:contato@crknexus.com"
             className="inline-flex items-center py-4.5 px-12 bg-white text-black rounded-btn font-display font-semibold text-base hover:scale-[1.04] hover:shadow-[0_0_32px_rgba(255,255,255,0.2)] transition-all duration-250"
           >
-            Quero uma consultoria estrategica
+            Quero uma consultoria estratégica 
           </a>
         </motion.div>
 
@@ -78,7 +78,7 @@ const CtaSection: React.FC = () => {
             href="mailto:contato@crknexus.com"
             className="font-display text-sm text-[#888888] hover:text-crk-accent transition-colors duration-200"
           >
-            ou envie uma mensagem →
+            ou envie uma mensagem 
           </a>
         </motion.p>
       </div>
