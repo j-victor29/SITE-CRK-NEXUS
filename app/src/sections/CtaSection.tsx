@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTag from '../components/SectionTag';
+import { whatsappUrl } from '../lib/whatsapp';
 
 
 const CtaSection: React.FC = () => {
@@ -60,7 +61,9 @@ const CtaSection: React.FC = () => {
           className="mt-10"
         >
           <a
-            href="mailto:contato@crknexus.com"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center py-4.5 px-12 bg-white text-black rounded-btn font-display font-semibold text-base hover:scale-[1.04] hover:shadow-[0_0_32px_rgba(255,255,255,0.2)] transition-all duration-250"
           >
             Quero uma consultoria estratégica 

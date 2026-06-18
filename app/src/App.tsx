@@ -7,6 +7,7 @@ import ServicesSection from './sections/ServicesSection';
 import ProcessSection from './sections/ProcessSection';
 import NumbersSection from './sections/NumbersSection';
 import CtaSection from './sections/CtaSection';
+import WhatsAppButton from './components/WhatsAppButton';
 
 const App: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         <CtaSection />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
