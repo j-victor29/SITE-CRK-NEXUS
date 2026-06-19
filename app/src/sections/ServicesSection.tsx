@@ -76,7 +76,7 @@ const services = [
 
 const ServicesSection: React.FC = () => {
   return (
-    <section id="serviços" className="bg-crk-bg py-[120px]">
+    <section id="servicos" className="scroll-mt-24 bg-crk-bg py-[120px]">
       <div className="max-w-[1100px] mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">

@@ -11,10 +11,10 @@ const navLinks = [
 ];
 
 const serviceLinks = [
-  'Estratégia',
-  'Social Mídia',
-  'Automação com IA',
-  'Dev. de Sistemas',
+  { label: 'Estratégia', href: '#servicos' },
+  { label: 'Social Mídia', href: '#servicos' },
+  { label: 'Automação com IA', href: '#servicos' },
+  { label: 'Dev. de Sistemas', href: '#servicos' },
 ];
 
 const Footer: React.FC = () => {
@@ -72,10 +72,13 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5">
               {serviceLinks.map((service) => (
-                <li key={service}>
-                  <span className="font-display text-sm text-[#888888]">
-                    {service}
-                  </span>
+                <li key={service.label}>
+                  <a
+                    href={service.href}
+                    className="font-display text-sm text-[#888888] hover:text-crk-text-primary transition-colors duration-200"
+                  >
+                    {service.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -89,11 +92,14 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:contato@crknexus.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=crknexus@gmail.com&su=Contato%20pelo%20site%20CRK%20Nexus"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Enviar e-mail para CRK Nexus"
                   className="flex items-center gap-2 font-display text-sm text-[#888888] hover:text-crk-text-primary transition-colors duration-200"
                 >
                   <Mail size={16} className="hover:text-crk-accent transition-colors" />
-                  contato@crknexus.com
+                  crknexus@gmail.com
                 </a>
               </li>
               <li>
