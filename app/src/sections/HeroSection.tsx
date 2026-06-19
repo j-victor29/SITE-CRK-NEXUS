@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import ParticleField from '../components/ParticleField';
 
+const heroImageModules = import.meta.glob<string>('../assets/*.{jpg,jpeg,png,webp}', {
+  eager: true,
+  import: 'default',
+});
+
+const heroImages = Object.entries(heroImageModules)
+  .sort(([firstImage], [secondImage]) => firstImage.localeCompare(secondImage))
+  .map(([imagePath, image]) => ({
+    src: image,
+    shouldContain: imagePath.endsWith('/jm.jpg'),
+  }));
+const slideInterval = 2900;
+
 const HeroSection: React.FC = () => {
+  const [activeImage, setActiveImage] = useState(0);
+
+  useEffect(() => {
+    if (heroImages.length <= 1) {
+      return undefined;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveImage((currentImage) => (currentImage + 1) % heroImages.length);
+    }, slideInterval);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
   return (
     <section
       id="hero"
@@ -116,14 +143,26 @@ const HeroSection: React.FC = () => {
                 background: 'linear-gradient(to right, #0A0A0A 0%, transparent 30%, transparent 100%)',
               }}
             />
-            <img
-              src="/founder.jpg"
-              alt="Fundador crknexus"
-              className="w-full h-full object-cover object-top"
-              style={{
-                filter: 'saturate(0.85) contrast(1.1)',
-              }}
-            />
+            {heroImages.map((image, index) => (
+              <div
+                key={image.src}
+                aria-hidden={index !== activeImage}
+                className={`absolute inset-0 transition-opacity duration-300 ${
+                  index === activeImage ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img
+                  src={image.src}
+                  alt={index === activeImage ? 'Imagem de destaque CRK Nexus' : ''}
+                  className={`absolute inset-0 h-full w-full object-top ${
+                    image.shouldContain ? 'object-contain' : 'object-cover'
+                  }`}
+                  style={{
+                    filter: 'saturate(0.85) contrast(1.1)',
+                  }}
+                />
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
