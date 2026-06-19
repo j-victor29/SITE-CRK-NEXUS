@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import ParticleField from '../components/ParticleField';
+import HeroBird3D from '../components/HeroBird3D';
 import heroBackground from '../assets/fotosite.jpg';
 import heroVideo from '../assets/videosite.mp4';
 
@@ -11,8 +12,9 @@ const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pb-20 pt-[14vh]"
+      className="relative h-[240vh]"
     >
+      <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden px-6 pb-20 pt-[14vh]">
       {/* Media Background */}
       <div className="absolute inset-0">
         <img
@@ -38,6 +40,9 @@ const HeroSection: React.FC = () => {
 
       {/* Particle Field */}
       <ParticleField />
+
+      {/* Interactive 3D Model */}
+      <HeroBird3D />
 
       {/* Grid Overlay */}
       <div
@@ -142,6 +147,7 @@ const HeroSection: React.FC = () => {
           Role para explorar
         </span>
       </motion.div>
+      </div>
     </section>
   );
 };

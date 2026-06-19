@@ -63,6 +63,22 @@
   .whatsapp-ping {
     animation: whatsapp-ping 1.8s ease-out infinite;
   }
+
+  .hero-bird-reference {
+    -webkit-mask-image: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.42) 44%,
+      #000 78%
+    );
+    mask-image: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.42) 44%,
+      #000 78%
+    );
+  }
+
 }
 
 @keyframes whatsapp-pulse {
