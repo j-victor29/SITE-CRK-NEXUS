@@ -4,27 +4,13 @@ import { ChevronDown } from 'lucide-react';
 import ParticleField from '../components/ParticleField';
 import heroBackground from '../assets/fotosite.jpg';
 import heroVideo from '../assets/videosite.mp4';
-import birdVideo from '../assets/passarinho.mp4';
 
 const HeroSection: React.FC = () => {
   const [videoReady, setVideoReady] = useState(false);
-  const [birdPosition, setBirdPosition] = useState({ x: 66, y: 34 });
-
-  const handlePointerMove = (event: React.PointerEvent<HTMLElement>) => {
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width) * 100;
-    const y = ((event.clientY - bounds.top) / bounds.height) * 100;
-
-    setBirdPosition({
-      x: Math.min(88, Math.max(12, x)),
-      y: Math.min(78, Math.max(14, y)),
-    });
-  };
 
   return (
     <section
       id="hero"
-      onPointerMove={handlePointerMove}
       className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pb-20 pt-[14vh]"
     >
       {/* Media Background */}
@@ -52,26 +38,6 @@ const HeroSection: React.FC = () => {
 
       {/* Particle Field */}
       <ParticleField />
-
-      {/* Interactive Bird */}
-      <div
-        className="pointer-events-none absolute z-[8] hidden h-[150px] w-[150px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full mix-blend-screen opacity-90 blur-[0.2px] transition-[left,top] duration-300 ease-out md:block lg:h-[190px] lg:w-[190px]"
-        style={{
-          left: `${birdPosition.x}%`,
-          top: `${birdPosition.y}%`,
-        }}
-        aria-hidden="true"
-      >
-        <video
-          src={birdVideo}
-          autoPlay
-          muted
-          playsInline
-          loop
-          preload="auto"
-          className="h-full w-full object-cover object-center"
-        />
-      </div>
 
       {/* Grid Overlay */}
       <div
