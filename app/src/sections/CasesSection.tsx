@@ -95,7 +95,7 @@ const CasesSection: React.FC = () => {
   };
 
   return (
-    <section id="cases" className="relative scroll-mt-20 overflow-hidden bg-[#070707] py-[120px]">
+    <section id="numeros" className="relative scroll-mt-20 overflow-hidden bg-[#070707] py-[120px]">
       <div className="pointer-events-none absolute inset-0 opacity-35" style={{ backgroundImage: 'linear-gradient(to right, rgba(192,192,192,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(192,192,192,.05) 1px, transparent 1px)', backgroundSize: '64px 64px', maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }} />
       <TopographicLayer />
       <div className="pointer-events-none absolute left-1/2 top-1/3 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-[#C0C0C0]/[0.025] blur-3xl" />
@@ -103,7 +103,7 @@ const CasesSection: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-[1180px] px-6">
         <motion.div initial={{ opacity: 0, y: reduceMotion ? 0 : 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: reduceMotion ? 0 : 0.65 }} className="grid gap-8 border-b border-[#C0C0C0]/25 pb-12 lg:grid-cols-[1fr_0.72fr] lg:items-end">
           <div>
-            <SectionTag text="CASES / ARQUITETURAS DE SOLUÇÃO" className="text-[#C0C0C0]" />
+            <SectionTag text="ARQUITETURAS DE SOLUÇÃO" className="text-[#C0C0C0]" />
             <h2 className="mt-5 max-w-[720px] font-display text-[34px] font-bold leading-[1.08] text-crk-text-primary sm:text-[44px] lg:text-[52px]">
               Estratégia aplicada.<span className="block bg-gradient-to-r from-[#E8E8E8] via-[#AFAFAF] to-[#5E5E5E] bg-clip-text text-transparent">Soluções que ganham escala.</span>
             </h2>
