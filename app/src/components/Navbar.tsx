@@ -5,7 +5,7 @@ import { useScrolled } from '../hooks/useScrolled';
 import MobileMenu from './MobileMenu';
 
 const navLinks = [
-  { label: 'Sobre', href: '#sobre' },
+  { label: 'Sobre Nós', href: '#sobre' },
   { label: 'Serviços', href: '#servicos' },
   { label: 'Processo', href: '#processo' },
   { label: 'Cases', href: '#numeros' },
