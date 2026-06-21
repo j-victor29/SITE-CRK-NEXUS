@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 interface ServiceCardProps {
@@ -11,13 +11,15 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ number, title, description, icon, index }) => {
+  const reduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: reduceMotion ? 0 : 30, filter: reduceMotion ? 'blur(0px)' : 'blur(9px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-crk-surface-2 border border-[#222222] rounded-card p-10 lg:p-11 overflow-hidden hover:border-crk-accent/25 hover:shadow-glow hover:scale-[1.015] transition-all duration-300"
+      transition={{ duration: reduceMotion ? 0 : 0.65, delay: reduceMotion ? 0 : index * 0.08 }}
+      className="crk-interactive-surface group relative rounded-card border border-[#222222] bg-crk-surface-2 p-10 lg:p-11"
     >
       {/* Decorative Number */}
       <span className="absolute bottom-[-20px] right-5 font-display font-bold text-[120px] leading-none text-white/[0.02] z-0 select-none pointer-events-none">
@@ -25,7 +27,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ number, title, description, i
       </span>
 
       {/* Icon */}
-      <div className="relative z-10 text-crk-accent mb-7">
+      <div className="crk-interactive-icon relative z-10 mb-7 text-crk-accent">
         {icon}
       </div>
 

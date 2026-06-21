@@ -64,7 +64,7 @@ const CtaSection: React.FC = () => {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center py-4.5 px-12 bg-white text-black rounded-btn font-display font-semibold text-base hover:scale-[1.04] hover:shadow-[0_0_32px_rgba(255,255,255,0.2)] transition-all duration-250"
+            className="crk-interactive-surface inline-flex items-center rounded-btn bg-white px-12 py-4.5 font-display text-base font-semibold text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#0A0A0A]"
           >
             Quero uma consultoria estratégica 
           </a>

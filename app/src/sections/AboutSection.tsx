@@ -64,7 +64,7 @@ const AboutSection: React.FC = () => {
           transition={{ ...revealTransition, delay: shouldReduceMotion ? 0 : 0.4 }}
           className="mx-auto mt-14 grid max-w-[1080px] gap-8 text-left lg:grid-cols-2 lg:items-start lg:gap-12"
         >
-          <div className="group relative order-2 aspect-[4/5] w-full min-w-0 overflow-hidden rounded-[1.75rem] border border-crk-border bg-[#0B0B0B] shadow-[0_28px_90px_rgba(0,0,0,0.42)]">
+          <div className="crk-interactive-surface group relative order-2 aspect-[4/5] w-full min-w-0 rounded-[1.75rem] border border-crk-border bg-[#0B0B0B] shadow-[0_28px_90px_rgba(0,0,0,0.42)]">
             <button
               type="button"
               className="absolute inset-0 z-30 cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-crk-surface-1"
@@ -135,21 +135,21 @@ const AboutSection: React.FC = () => {
 
               <div className="mt-7 grid gap-5">
                 <div className="flex gap-4">
-                  <Code2 className="mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
+                  <Code2 className="crk-interactive-icon mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
                   <div>
                     <h4 className="font-display font-semibold text-white">Programação</h4>
                     <p className="mt-1 text-sm leading-6 text-[#8E8E8E]">TypeScript, JavaScript, React, Node.js e Python.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <Layers3 className="mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
+                  <Layers3 className="crk-interactive-icon mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
                   <div>
                     <h4 className="font-display font-semibold text-white">Competências</h4>
                     <p className="mt-1 text-sm leading-6 text-[#8E8E8E]">Arquitetura de interfaces, APIs, bancos de dados, integrações e performance.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <Cpu className="mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
+                  <Cpu className="crk-interactive-icon mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
                   <div>
                     <h4 className="font-display font-semibold text-white">Experiência aplicada</h4>
                     <p className="mt-1 text-sm leading-6 text-[#8E8E8E]">Sistemas sob medida, automação de processos e produtos digitais escaláveis.</p>
@@ -163,7 +163,7 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="group relative order-1 aspect-[4/5] w-full min-w-0 overflow-hidden rounded-[1.75rem] border border-crk-border bg-[#0B0B0B] shadow-[0_28px_90px_rgba(0,0,0,0.42)]">
+          <div className="crk-interactive-surface group relative order-1 aspect-[4/5] w-full min-w-0 rounded-[1.75rem] border border-crk-border bg-[#0B0B0B] shadow-[0_28px_90px_rgba(0,0,0,0.42)]">
             <button
               type="button"
               className="absolute inset-0 z-30 cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-crk-surface-1"
@@ -234,21 +234,21 @@ const AboutSection: React.FC = () => {
 
               <div className="mt-7 grid gap-5">
                 <div className="flex gap-4">
-                  <Palette className="mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
+                  <Palette className="crk-interactive-icon mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
                   <div>
                     <h4 className="font-display font-semibold text-white">Design</h4>
                     <p className="mt-1 text-sm leading-6 text-[#8E8E8E]">Identidade visual, direção de arte e interfaces.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <Megaphone className="mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
+                  <Megaphone className="crk-interactive-icon mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
                   <div>
                     <h4 className="font-display font-semibold text-white">Marketing</h4>
                     <p className="mt-1 text-sm leading-6 text-[#8E8E8E]">Estratégia, posicionamento, campanhas e análise.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <UsersRound className="mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
+                  <UsersRound className="crk-interactive-icon mt-0.5 h-5 w-5 shrink-0 text-white" aria-hidden="true" />
                   <div>
                     <h4 className="font-display font-semibold text-white">Social Media</h4>
                     <p className="mt-1 text-sm leading-6 text-[#8E8E8E]">Planejamento editorial, conteúdo, comunidade e performance.</p>

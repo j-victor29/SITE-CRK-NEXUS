@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import SectionTag from '../components/SectionTag';
 
 interface ProcessStepData {
@@ -40,6 +40,7 @@ const ProcessSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   const [isInView, setIsInView] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -67,6 +68,11 @@ const ProcessSection: React.FC = () => {
     const length = path.getTotalLength();
 
     path.style.strokeDasharray = `${length}`;
+    if (reduceMotion) {
+      path.style.strokeDashoffset = '0';
+      path.style.transition = 'none';
+      return;
+    }
     path.style.strokeDashoffset = `${length}`;
 
     // Trigger animation
@@ -74,7 +80,7 @@ const ProcessSection: React.FC = () => {
       path.style.transition = 'stroke-dashoffset 1.5s ease-in-out';
       path.style.strokeDashoffset = '0';
     });
-  }, [isInView]);
+  }, [isInView, reduceMotion]);
 
   return (
     <section
@@ -120,7 +126,7 @@ const ProcessSection: React.FC = () => {
         <div className="hidden lg:block relative">
           {/* SVG Connecting Line */}
           <svg
-            className="absolute top-[60px] left-0 w-full h-[2px] z-0"
+            className="crk-interactive-line absolute left-0 top-[60px] z-0 h-[2px] w-full"
             preserveAspectRatio="none"
             viewBox="0 0 1100 2"
           >
@@ -139,14 +145,14 @@ const ProcessSection: React.FC = () => {
             {steps.map((step, index) => (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: reduceMotion ? 0 : 24, filter: reduceMotion ? 'blur(0px)' : 'blur(8px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="flex flex-col items-center text-center"
+                transition={{ duration: reduceMotion ? 0 : 0.62, delay: reduceMotion ? 0 : index * 0.08 }}
+                className="crk-interactive-surface flex flex-col items-center rounded-card border border-transparent px-3 py-5 text-center"
                 style={{ width: '160px' }}
               >
-                <span className="font-display font-bold text-5xl lg:text-[48px] text-crk-accent/40 mb-3">
+                <span className="crk-interactive-icon mb-3 font-display text-5xl font-bold text-crk-accent/40 lg:text-[48px]">
                   {step.number}
                 </span>
                 <h3 className="font-display font-bold text-lg text-crk-text-primary mb-2">
@@ -163,22 +169,22 @@ const ProcessSection: React.FC = () => {
         {/* Process Steps - Mobile */}
         <div className="lg:hidden relative">
           {/* Vertical Line */}
-          <div className="absolute left-[23px] top-0 bottom-0 w-[1px] bg-crk-accent/20" />
+          <div className="crk-interactive-line absolute bottom-0 left-[23px] top-0 w-[1px] bg-crk-accent/20" />
 
           <div className="flex flex-col gap-10">
             {steps.map((step, index) => (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: reduceMotion ? 0 : -20, filter: reduceMotion ? 'blur(0px)' : 'blur(8px)' }}
+                whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="relative pl-12"
+                transition={{ duration: reduceMotion ? 0 : 0.62, delay: reduceMotion ? 0 : index * 0.08 }}
+                className="crk-interactive-surface relative rounded-card border border-transparent py-4 pl-12 pr-4"
               >
                 {/* Dot on line */}
                 <div className="absolute left-[18px] top-[18px] w-[9px] h-[9px] rounded-full bg-crk-accent/40" />
 
-                <span className="font-display font-bold text-4xl text-crk-accent/40">
+                <span className="crk-interactive-icon font-display text-4xl font-bold text-crk-accent/40">
                   {step.number}
                 </span>
                 <h3 className="font-display font-bold text-lg text-crk-text-primary mt-1 mb-1">
