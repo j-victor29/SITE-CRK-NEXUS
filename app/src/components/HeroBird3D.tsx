@@ -80,7 +80,7 @@ const HeroBird3D = () => {
     window.addEventListener('pointermove', handlePointerMove, { passive: true });
 
     const updateScrollTarget = () => {
-      const hero = container.closest<HTMLElement>('#hero');
+      const hero = container.closest<HTMLElement>('#inicio');
       if (!hero) return;
 
       const bounds = hero.getBoundingClientRect();

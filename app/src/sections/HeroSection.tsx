@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <section
-      id="hero"
+      id="inicio"
       className="relative h-[240vh]"
     >
       <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden px-6 pb-20 pt-[14vh]">

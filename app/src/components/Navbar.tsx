@@ -5,7 +5,7 @@ import { useScrolled } from '../hooks/useScrolled';
 import MobileMenu from './MobileMenu';
 
 const navLinks: Array<{ label: string; href: string; icon: LucideIcon }> = [
-  { label: 'Início', href: '#hero', icon: House },
+  { label: 'Início', href: '#inicio', icon: House },
   { label: 'Sobre Nós', href: '#sobre', icon: Users },
   { label: 'Serviços', href: '#servicos', icon: Layers3 },
   { label: 'Processo', href: '#processo', icon: Workflow },
@@ -16,7 +16,7 @@ const navLinks: Array<{ label: string; href: string; icon: LucideIcon }> = [
 const Navbar: React.FC = () => {
   const scrolled = useScrolled(48);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeHref, setActiveHref] = useState('#hero');
+  const [activeHref, setActiveHref] = useState('#inicio');
 
   useEffect(() => {
     const sections = navLinks
@@ -52,8 +52,8 @@ const Navbar: React.FC = () => {
       >
         <div className="mx-auto flex h-[70px] max-w-[1360px] items-center justify-between gap-4 px-5 lg:px-8">
           <a
-            href="#hero"
-            onClick={() => setActiveHref('#hero')}
+            href="#inicio"
+            onClick={() => setActiveHref('#inicio')}
             className="group flex shrink-0 items-center gap-2.5"
             aria-label="CRK Nexus - início"
           >
