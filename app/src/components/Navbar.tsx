@@ -1,22 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, BriefcaseBusiness, House, Layers3, Mail, Menu, Users, Workflow, type LucideIcon } from 'lucide-react';
+import { ArrowUpRight, Menu } from 'lucide-react';
 import { useScrolled } from '../hooks/useScrolled';
 import MobileMenu from './MobileMenu';
 
-const navLinks: Array<{ label: string; href: string; icon: LucideIcon }> = [
-  { label: 'Início', href: '#inicio', icon: House },
-  { label: 'Sobre Nós', href: '#sobre', icon: Users },
-  { label: 'Serviços', href: '#servicos', icon: Layers3 },
-  { label: 'Processo', href: '#processo', icon: Workflow },
-  { label: 'Cases', href: '#casos', icon: BriefcaseBusiness },
-  { label: 'Contato', href: '#contato', icon: Mail },
+const navLinks = [
+  { label: 'Início', href: '#inicio' },
+  { label: 'Sobre Nós', href: '#sobre' },
+  { label: 'Serviços', href: '#servicos' },
+  { label: 'Processo', href: '#processo' },
+  { label: 'Cases', href: '#casos' },
+  { label: 'Contato', href: '#contato' },
 ];
 
 const Navbar: React.FC = () => {
   const scrolled = useScrolled(48);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeHref, setActiveHref] = useState('#inicio');
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const sections = navLinks
@@ -38,12 +40,39 @@ const Navbar: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+    let frameId: number | null = null;
+
+    const handleScrollDirection = () => {
+      if (frameId !== null) return;
+
+      frameId = window.requestAnimationFrame(() => {
+        const currentScrollY = Math.max(window.scrollY, 0);
+        const difference = currentScrollY - lastScrollY.current;
+
+        if (currentScrollY <= 32) setHeaderVisible(true);
+        else if (difference > 5) setHeaderVisible(false);
+        else if (difference < -4) setHeaderVisible(true);
+
+        lastScrollY.current = currentScrollY;
+        frameId = null;
+      });
+    };
+
+    window.addEventListener('scroll', handleScrollDirection, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScrollDirection);
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+    };
+  }, []);
+
   return (
     <>
       <motion.header
         initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        animate={{ y: headerVisible ? 0 : -86, opacity: headerVisible ? 1 : 0 }}
+        transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
         className={`site-view-header fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
           scrolled
             ? 'border-white/10 bg-[#050505]/90 shadow-[0_18px_55px_rgba(0,0,0,0.35)] backdrop-blur-xl'
@@ -69,12 +98,11 @@ const Navbar: React.FC = () => {
 
           <nav
             aria-label="Navegação principal"
-            className="relative hidden items-center gap-1 rounded-full border border-white/10 bg-[#0A0A0A]/95 p-1 shadow-[inset_0_1px_rgba(255,255,255,0.05),0_10px_30px_rgba(0,0,0,0.42)] lg:flex"
+            className="relative hidden min-w-[560px] items-center justify-center gap-2 rounded-full border border-white/10 bg-[#0A0A0A]/95 px-2 py-2 shadow-[inset_0_1px_rgba(255,255,255,0.05),0_10px_30px_rgba(0,0,0,0.42)] xl:min-w-[600px] lg:flex"
           >
             <span className="pointer-events-none absolute inset-x-16 top-0 h-px bg-gradient-to-r from-transparent via-[#C0C0C0]/55 to-transparent" />
             {navLinks.map((link) => {
               const isActive = activeHref === link.href;
-              const Icon = link.icon;
 
               return (
                 <a
@@ -82,20 +110,10 @@ const Navbar: React.FC = () => {
                   href={link.href}
                   onClick={() => setActiveHref(link.href)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`group relative flex h-9 items-center justify-center whitespace-nowrap rounded-full font-display text-xs font-semibold transition-all duration-300 hover:z-10 hover:scale-[1.025] hover:shadow-cta-hover ${
-                    isActive ? 'gap-2 px-4 text-black xl:px-5' : 'gap-0 px-3.5 text-[#9A9A9A] xl:px-4'
-                  }`}
+                  className="group relative flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-transparent px-3.5 font-display text-xs font-semibold text-[#9A9A9A] transition-colors duration-200 hover:border-white focus-visible:border-white focus-visible:outline-none xl:px-4"
                 >
-                  {isActive && (
-                    <motion.span
-                      layoutId="navbar-active-item"
-                      className="absolute inset-0 rounded-full border border-white/80 bg-gradient-to-r from-[#F5F5F5] via-[#E8E8E8] to-[#C0C0C0] shadow-[0_0_24px_rgba(232,232,232,0.14),inset_0_1px_rgba(255,255,255,0.7)]"
-                      transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                    />
-                  )}
-                  <span className="absolute inset-0 z-10 rounded-full bg-white opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-                  {isActive && <Icon className="relative z-20" size={14} strokeWidth={2.2} />}
-                  <span className="relative z-20 transition-colors duration-200 group-hover:text-black">{link.label}</span>
+                  <span className="absolute inset-0 z-10 scale-x-[0.82] scale-y-[0.86] rounded-md bg-white opacity-0 transition-[opacity,transform] duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100" />
+                  <span className="relative z-20 transition-colors duration-200 group-hover:text-black group-focus-visible:text-black">{link.label}</span>
                 </a>
               );
             })}
@@ -104,9 +122,9 @@ const Navbar: React.FC = () => {
           <a
             href="#contato"
             onClick={() => setActiveHref('#contato')}
-            className="group relative hidden h-10 shrink-0 items-center gap-2 overflow-hidden rounded-md border border-white/80 bg-gradient-to-r from-[#F5F5F5] via-[#E8E8E8] to-[#C0C0C0] px-4 font-display text-[13px] font-semibold text-[#0A0A0A] shadow-[0_0_24px_rgba(232,232,232,0.10)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(232,232,232,0.18)] lg:inline-flex"
+            className="header-cta group relative hidden h-10 shrink-0 items-center gap-2 rounded-md border border-white/80 bg-gradient-to-r from-[#F5F5F5] via-[#E8E8E8] to-[#C0C0C0] px-4 font-display text-[13px] font-semibold text-[#0A0A0A] shadow-[0_0_20px_rgba(232,232,232,0.10)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.055] focus-visible:-translate-y-0.5 focus-visible:scale-[1.055] focus-visible:outline-none lg:inline-flex"
           >
-            <span className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white/45 to-transparent" />
+            <span className="absolute inset-y-0 right-0 w-16 rounded-r-md bg-gradient-to-l from-white/45 to-transparent" />
             <span className="relative">Falar com estrategista</span>
             <ArrowUpRight className="relative transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" size={17} />
           </a>
