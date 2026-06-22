@@ -19,7 +19,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ number, title, description, i
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: reduceMotion ? 0 : 0.65, delay: reduceMotion ? 0 : index * 0.08 }}
-      className="crk-interactive-surface group relative rounded-card border border-[#222222] bg-crk-surface-2 p-10 lg:p-11"
+      className="crk-interactive-surface crk-mobile-reveal group relative rounded-card border border-[#222222] bg-crk-surface-2 p-10 lg:p-11"
     >
       {/* Decorative Number */}
       <span className="absolute bottom-[-20px] right-5 font-display font-bold text-[120px] leading-none text-white/[0.02] z-0 select-none pointer-events-none">

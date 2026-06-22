@@ -149,7 +149,7 @@ const ProcessSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: reduceMotion ? 0 : 0.62, delay: reduceMotion ? 0 : index * 0.08 }}
-                className="crk-interactive-surface flex flex-col items-center rounded-card border border-transparent px-3 py-5 text-center"
+                className="crk-interactive-surface crk-mobile-reveal flex flex-col items-center rounded-card border border-transparent px-3 py-5 text-center"
                 style={{ width: '160px' }}
               >
                 <span className="crk-interactive-icon mb-3 font-display text-5xl font-bold text-crk-accent/40 lg:text-[48px]">
@@ -179,7 +179,7 @@ const ProcessSection: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: reduceMotion ? 0 : 0.62, delay: reduceMotion ? 0 : index * 0.08 }}
-                className="crk-interactive-surface relative rounded-card border border-transparent py-4 pl-12 pr-4"
+                className="crk-interactive-surface crk-mobile-reveal relative rounded-card border border-transparent py-4 pl-12 pr-4"
               >
                 {/* Dot on line */}
                 <div className="absolute left-[18px] top-[18px] w-[9px] h-[9px] rounded-full bg-crk-accent/40" />

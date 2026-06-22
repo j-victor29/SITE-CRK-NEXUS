@@ -27,7 +27,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
   return (
     <motion.div
-      className={className}
+      className={`crk-mobile-reveal ${className ?? ''}`}
       initial={
         shouldReduceMotion
           ? false
