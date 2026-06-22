@@ -100,7 +100,7 @@ const ProcessSection: React.FC = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5 }}
           >
-            <SectionTag text="COMO TRABALHAMOS" />
+            <SectionTag text="COMO TRABALHAMOS?" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
