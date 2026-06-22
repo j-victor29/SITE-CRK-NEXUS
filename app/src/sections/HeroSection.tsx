@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
 import ParticleField from '../components/ParticleField';
 import HeroBird3D from '../components/HeroBird3D';
 import heroBackground from '../assets/fotosite.jpg';
@@ -128,25 +127,7 @@ const HeroSection: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          className="flex flex-col items-center"
-        >
-          <ChevronDown size={20} className="text-[#666666] -mb-2" />
-          <ChevronDown size={20} className="text-[#666666]" />
-        </motion.div>
-        <span className="font-mono text-[11px] tracking-[0.1em] uppercase text-[#666666]">
-          Role para explorar
-        </span>
-      </motion.div>
+
       </div>
     </section>
   );

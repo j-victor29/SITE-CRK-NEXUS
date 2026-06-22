@@ -62,11 +62,8 @@ const Navbar: React.FC = () => {
               alt=""
               className="h-9 w-9 object-contain drop-shadow-[0_0_12px_rgba(232,232,232,0.12)] transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="hidden sm:block">
+            <span className="hidden sm:flex items-center">
               <span className="block font-display text-[15px] font-semibold leading-none text-white">CRK NEXUS</span>
-              <span className="mt-1 block font-display text-[7px] font-semibold uppercase tracking-[0.2em] text-[#8D8D8D]">
-                Estratégia · IA · Tecnologia
-              </span>
             </span>
           </a>
 
