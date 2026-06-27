@@ -8,7 +8,7 @@
 ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12.x-0055FF?style=flat&logo=framer&logoColor=white)
 ![Three.js](https://img.shields.io/badge/Three.js-r184-black?style=flat&logo=three.js&logoColor=white)
 
-> **Website institucional premium** desenvolvido para a **CRK Nexus**. O objetivo é demonstrar uma presença digital de alto impacto que une design minimalista (estética dark/glassmorphism), animações interativas e de alta performance, e uma estrutura de componentes modular e escalável.
+> **Website premium** desenvolvido para a **CRK Nexus**. O objetivo é demonstrar uma presença digital de alto impacto que une design minimalista (estética dark/glassmorphism), animações interativas e de alta performance, e uma estrutura de componentes modular e escalável.
 
 ---
 
