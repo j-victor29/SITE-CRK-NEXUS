@@ -22,7 +22,6 @@
 - [Lógica e Estado Interno](#-lógica-e-estado-interno)
 - [Como Instalar e Rodar](#️-como-instalar-e-rodar)
 - [Diferenciais Técnicos](#-diferenciais-têcnicos)
-- [Roadmap Futuro](#-roadmap-futuro)
 
 ---
 
