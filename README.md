@@ -1,4 +1,4 @@
-# 🦅 CRK Nexus — Plataforma de Presença Digital & Estratégia
+# 🦅 CRK Nexus - Plataforma de Presença Digital & Estratégia
 
 ![React 19](https://img.shields.io/badge/React-19.0-61DAFB?style=flat&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat&logo=typescript&logoColor=white)
@@ -179,17 +179,6 @@ Na pasta `app/`, você pode rodar os seguintes comandos:
 *   **Otimização de Performance:** Canvas de partículas inteligente que pausa a execução e animações desabilitadas automaticamente quando o usuário ativa o modo de movimentos reduzidos do sistema operacional (`prefers-reduced-motion`).
 *   **Micro-interações:** Efeitos de hover extremamente fluidos, cursores customizados e transições suaves de elementos ativos.
 *   **Layout Mobile-Adaptativo:** Implementado com foco em breakpoints críticos (1024px e 768px), assegurando visualização impecável tanto em computadores quanto em celulares e tablets.
-
----
-
-## 🗺️ Roadmap Futuro
-
-Algumas das melhorias planejadas para o futuro da plataforma incluem:
-
-- [ ] Integração com sistema headless CMS para gerenciamento dinâmico de novos cases de sucesso.
-- [ ] Implementação de suporte nativo a múltiplos idiomas (Internacionalização via i18next).
-- [ ] Dashboards analíticos adicionais integrados com APIs de rastreio de performance de campanhas.
-- [ ] Otimizações extras de SEO (Metatags dinâmicas e geração de sitemaps automatizados).
 
 ---
 
